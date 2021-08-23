@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
+import { Link } from "react-router-dom";
 import { LoginRequest } from "../../store/actions/auth";
 import PropTypes from "prop-types";
 
@@ -53,9 +53,17 @@ const Login = ({ LoginRequest }) => {
         {formik.errors.password && <div>{formik.errors.password}</div>}
 
         <Button variant="contained" color="primary" type="submit">
-          submit
+          Login
         </Button>
       </form>
+      <Button variant="contained" color="primary" style={{ marginTop: "10px" }}>
+        <Link style={{ color: "white" }} to="/register">
+          Register
+        </Link>
+      </Button>
+      <div style={{ marginTop: "20px" }}>
+        <Link to="/forgetpassword">Forget Password</Link>
+      </div>
     </div>
   );
 };
