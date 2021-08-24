@@ -12,6 +12,8 @@ const AuthReducer = (state = INITIAL_SATE, action) => {
       return action.payload;
     case types.POST_AUTH_OTP_RECEIVE:
       return action.payload;
+    case types.POST_AUTH_RESETPASS_RECEIVE:
+      return action.payload;
 
     default:
       return state;

@@ -3,6 +3,7 @@ import * as Register from "../../network/register";
 import * as Login from "../../network/login";
 import * as ForgetPass from "../../network/forgetPassword";
 import * as OtpForm from "../../network/otpForm";
+import * as resetPassword from "../../network/resetPassword";
 
 import * as types from "../actionTypes/auth";
 import * as Actions from "../actions/auth";
@@ -32,10 +33,20 @@ export function* ForgetPasswordReq(action) {
 export function* OtpReq(action) {
   try {
     const response = yield call(OtpForm.Otp, action.payload);
-    history.push("./login");
+    history.push("./resetPassword");
     yield put(Actions.OtpReceive(response));
   } catch (error) {
     yield put(Actions.OtpReceive(error.response.data.errors));
+  }
+}
+//reset password
+export function* ResetPassword(action) {
+  try {
+    const response = yield call(resetPassword.resetPassword, action.payload);
+    history.push("./login");
+    yield put(Actions.ResetPassReceive(response));
+  } catch (error) {
+    yield put(Actions.ResetPassReceive(error.response.data.errors));
   }
 }
 
@@ -58,4 +69,5 @@ export function* getUsersSaga() {
   yield takeLatest(types.POST_AUTH_LOGIN_REQUEST, LoginUsersReq);
   yield takeLatest(types.POST_AUTH_FORGETPASS_REQUEST, ForgetPasswordReq);
   yield takeLatest(types.POST_AUTH_OTP_REQUEST, OtpReq);
+  yield takeLatest(types.POST_AUTH_RESETPASS_REQUEST, ResetPassword);
 }

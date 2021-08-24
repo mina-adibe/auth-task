@@ -46,3 +46,14 @@ export const OtpReceive = (payload) => ({
   type: types.POST_AUTH_OTP_RECEIVE,
   payload,
 });
+
+//reset password
+export const ResetPassRequest = (payload) => ({
+  type: types.POST_AUTH_RESETPASS_REQUEST,
+  payload,
+});
+
+export const ResetPassReceive = (payload) => ({
+  type: types.POST_AUTH_RESETPASS_RECEIVE,
+  payload,
+});

@@ -13,3 +13,7 @@ export const POST_AUTH_FORGETPASS_RECEIVE = "POST_AUTH_FORGETPASS_RECEIVE"; // t
 //otp
 export const POST_AUTH_OTP_REQUEST = "POST_AUTH_OTP_REQUEST"; // to fire the saga
 export const POST_AUTH_OTP_RECEIVE = "POST_AUTH_OTP_RECEIVE"; // to store the response
+
+//reset password
+export const POST_AUTH_RESETPASS_REQUEST = "POST_AUTH_RESETPASS_REQUEST"; // to fire the saga
+export const POST_AUTH_RESETPASS_RECEIVE = "POST_AUTH_RESETPASS_RECEIVE"; // to store the response
