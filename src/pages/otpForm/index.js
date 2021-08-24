@@ -12,18 +12,15 @@ const OtpForm = ({ OtpRequest }) => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      otp: "",
-      password: "",
+      token: "",
     },
     validationSchema: Yup.object({
       email: Yup.string().email("Must be valid E-mail").required("Required"),
-      otp: Yup.string().required("Required"),
-      password: Yup.string().required("Required"),
+      token: Yup.string().required("Required"),
     }),
 
     onSubmit: (values) => {
       OtpRequest(values);
-      console.log(values);
     },
   });
 
@@ -45,26 +42,14 @@ const OtpForm = ({ OtpRequest }) => {
 
         <TextField
           fullWidth
-          name="otp"
-          label="otp"
-          id="otp"
-          placeholder="Enter Otp Code          "
+          name="token"
+          label="token"
+          id="token"
+          placeholder="Enter token Code          "
           onChange={formik.handleChange}
-          value={formik.values.otp}
+          value={formik.values.token}
         />
-        {formik.errors.otp && <div>{formik.errors.otp}</div>}
-
-        <TextField
-          fullWidth
-          name="password"
-          label="password"
-          type="password"
-          id="password"
-          placeholder="enter your password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        {formik.errors.password && <div>{formik.errors.password}</div>}
+        {formik.errors.token && <div>{formik.errors.token}</div>}
 
         <Button variant="contained" color="primary" type="submit">
           Submit
