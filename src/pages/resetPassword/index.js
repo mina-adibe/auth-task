@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
 import { ResetPassRequest } from "../../store/actions/auth";
 import PropTypes from "prop-types";
 
