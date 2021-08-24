@@ -34,7 +34,7 @@ const Navbar = () => {
 
   const handleClickLogout = () => {
     setUserLogged(logout());
-    history.push("/register");
+    history.push("/login");
   };
 
   const classes = useStyles();
