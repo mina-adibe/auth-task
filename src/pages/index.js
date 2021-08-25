@@ -1,7 +1,7 @@
-export { default as Login } from "./login/index";
-export { default as Register } from "./register/index";
-export { default as ForgetPassword } from "./forgetPassword/index";
-export { default as OtpForm } from "./otpForm/index";
-export { default as ResetPassword } from "./resetPassword/index";
+export { default as Login } from "./login/Login";
+export { default as Register } from "./register/Register";
+export { default as ForgetPassword } from "./forgetPassword/ForgetPassword";
+export { default as OtpForm } from "./otpForm/OtpForm";
+export { default as ResetPassword } from "./resetPassword/ResetPassword";
 
-export { default as Home } from "./home/index";
+export { default as Home } from "./home/Home";
