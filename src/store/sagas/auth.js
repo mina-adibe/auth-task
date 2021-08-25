@@ -23,7 +23,7 @@ export function* RegisterUsersReq(action) {
 export function* ForgetPasswordReq(action) {
   try {
     const response = yield call(ForgetPass.forgetPassword, action.payload);
-    history.push(`./OtpForm/${action.payload.email}`);
+    history.replace(`./OtpForm/${action.payload.email}`);
     yield put(Actions.ForgetPassReceive(response));
   } catch (error) {
     yield put(Actions.ForgetPassReceive(error.response.data.errors));
@@ -33,7 +33,9 @@ export function* ForgetPasswordReq(action) {
 export function* OtpReq(action) {
   try {
     const response = yield call(OtpForm.Otp, action.payload);
-    history.push("./resetPassword");
+    history.replace(
+      `./resetPassword/${action.payload.token}/${action.payload.email}`
+    );
     yield put(Actions.OtpReceive(response));
   } catch (error) {
     yield put(Actions.OtpReceive(error.response.data.errors));

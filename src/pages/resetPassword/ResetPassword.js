@@ -6,14 +6,19 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { ResetPassRequest } from "../../store/actions/auth";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 
 const ResetPassword = ({ ResetPassRequest }) => {
+  let { pathname } = useLocation();
+  let token = pathname.substr(15, 10);
+  let email = pathname.substr(26);
+
   //formik
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: email,
       password: "",
-      token: "",
+      token: token,
     },
     validationSchema: Yup.object({
       email: Yup.string().email("Must be valid E-mail").required("Required"),
