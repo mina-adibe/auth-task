@@ -10,12 +10,12 @@ import { useLocation } from "react-router-dom";
 
 const OtpForm = ({ OtpRequest }) => {
   let { pathname } = useLocation();
-  let mail = pathname.substr(9);
+  let email = pathname.substr(9);
 
   //formik
   const formik = useFormik({
     initialValues: {
-      email: mail,
+      email: email,
       token: "",
     },
     validationSchema: Yup.object({
@@ -24,6 +24,7 @@ const OtpForm = ({ OtpRequest }) => {
     }),
 
     onSubmit: (values) => {
+      console.log("values", values);
       OtpRequest(values);
     },
   });
