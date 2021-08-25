@@ -23,7 +23,7 @@ export function* RegisterUsersReq(action) {
 export function* ForgetPasswordReq(action) {
   try {
     const response = yield call(ForgetPass.forgetPassword, action.payload);
-    history.push("./OtpForm");
+    history.push(`./OtpForm/${action.payload.email}`);
     yield put(Actions.ForgetPassReceive(response));
   } catch (error) {
     yield put(Actions.ForgetPassReceive(error.response.data.errors));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import TextField from "@material-ui/core/TextField";
@@ -6,12 +6,16 @@ import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { OtpRequest } from "../../store/actions/auth";
+import { useLocation } from "react-router-dom";
 
 const OtpForm = ({ OtpRequest }) => {
+  let { pathname } = useLocation();
+  let mail = pathname.substr(9);
+
   //formik
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: mail,
       token: "",
     },
     validationSchema: Yup.object({
