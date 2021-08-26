@@ -20,19 +20,9 @@ export const RegisterRequest = (payload) => ({
   payload,
 });
 
-export const RegisterReceive = (payload) => ({
-  type: types.POST_AUTH_REGISTER_RECEIVE,
-  payload,
-});
-
 //forget password
 export const ForgetPassRequest = (payload) => ({
   type: types.POST_AUTH_FORGETPASS_REQUEST,
-  payload,
-});
-
-export const ForgetPassReceive = (payload) => ({
-  type: types.POST_AUTH_FORGETPASS_RECEIVE,
   payload,
 });
 
@@ -42,18 +32,8 @@ export const OtpRequest = (payload) => ({
   payload,
 });
 
-export const OtpReceive = (payload) => ({
-  type: types.POST_AUTH_OTP_RECEIVE,
-  payload,
-});
-
 //reset password
 export const ResetPassRequest = (payload) => ({
   type: types.POST_AUTH_RESETPASS_REQUEST,
-  payload,
-});
-
-export const ResetPassReceive = (payload) => ({
-  type: types.POST_AUTH_RESETPASS_RECEIVE,
   payload,
 });
