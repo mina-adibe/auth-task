@@ -8,8 +8,8 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import { OtpRequest } from "../../store/actions/auth";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { TextInput } from "../../component/index";
 
 const OtpForm = ({ OtpRequest }) => {
   let { pathname } = useLocation();
@@ -36,7 +36,7 @@ const OtpForm = ({ OtpRequest }) => {
     <div style={{ width: "50%", marginRight: "auto", marginLeft: "auto" }}>
       <h1>Enter Otp Code</h1>
       <form onSubmit={formik.handleSubmit}>
-        <TextField
+        <TextInput
           fullWidth
           name="email"
           label="email"
@@ -48,7 +48,7 @@ const OtpForm = ({ OtpRequest }) => {
         />
         {formik.errors.email && <div>{formik.errors.email}</div>}
 
-        <TextField
+        <TextInput
           fullWidth
           name="token"
           label="token"

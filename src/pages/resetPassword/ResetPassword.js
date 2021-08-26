@@ -9,8 +9,8 @@ import { useFormik } from "formik";
 
 import { ResetPassRequest } from "../../store/actions/auth";
 
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { TextInput } from "../../component";
 
 const ResetPassword = ({ ResetPassRequest }) => {
   let { pathname } = useLocation();
@@ -38,7 +38,7 @@ const ResetPassword = ({ ResetPassRequest }) => {
   return (
     <div style={{ width: "50%", marginRight: "auto", marginLeft: "auto" }}>
       <form onSubmit={formik.handleSubmit}>
-        <TextField
+        <TextInput
           fullWidth
           name="email"
           label="email"
@@ -50,7 +50,7 @@ const ResetPassword = ({ ResetPassRequest }) => {
         />
         {formik.errors.email && <div>{formik.errors.email}</div>}
 
-        <TextField
+        <TextInput
           fullWidth
           name="password"
           label="password"
@@ -61,7 +61,7 @@ const ResetPassword = ({ ResetPassRequest }) => {
           value={formik.values.password}
         />
         {formik.errors.password && <div>{formik.errors.password}</div>}
-        <TextField
+        <TextInput
           fullWidth
           name="token"
           label="token"

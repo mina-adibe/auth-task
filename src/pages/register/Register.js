@@ -7,9 +7,10 @@ import * as Yup from "yup";
 
 import { RegisterRequest } from "../../store/actions/auth";
 import PhoneInput from "react-phone-input-2";
+import { TextInput } from "../../component/index";
+
 import "react-phone-input-2/lib/style.css";
 
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 const Register = ({ RegisterRequest }) => {
@@ -39,7 +40,7 @@ const Register = ({ RegisterRequest }) => {
   return (
     <div style={{ width: "50%", marginRight: "auto", marginLeft: "auto" }}>
       <form onSubmit={formik.handleSubmit}>
-        <TextField
+        <TextInput
           fullWidth
           id="name"
           label="name"
@@ -49,7 +50,7 @@ const Register = ({ RegisterRequest }) => {
           onChange={formik.handleChange}
         />
         {formik.errors.username && <div>{formik.errors.username}</div>}
-        <TextField
+        <TextInput
           fullWidth
           label="Email"
           id="email"
@@ -79,7 +80,7 @@ const Register = ({ RegisterRequest }) => {
           <div>{formik.errors.mobile_number}</div>
         )}
 
-        <TextField
+        <TextInput
           fullWidth
           id="password"
           label="password"
@@ -90,7 +91,7 @@ const Register = ({ RegisterRequest }) => {
         />
         {formik.errors.password && <div>{formik.errors.password}</div>}
 
-        <TextField
+        <TextInput
           fullWidth
           label="confirm password"
           name="password_confirmation"

@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { LoginRequest } from "../../store/actions/auth";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { TextInput } from "../../component/index";
 
 const Login = ({ LoginRequest }) => {
   //formik
@@ -28,7 +28,7 @@ const Login = ({ LoginRequest }) => {
   return (
     <div style={{ width: "50%", marginRight: "auto", marginLeft: "auto" }}>
       <form onSubmit={formik.handleSubmit}>
-        <TextField
+        <TextInput
           fullWidth
           name="email"
           label="email"
@@ -40,7 +40,7 @@ const Login = ({ LoginRequest }) => {
         />
         {formik.errors.email && <div>{formik.errors.email}</div>}
 
-        <TextField
+        <TextInput
           fullWidth
           name="password"
           label="password"

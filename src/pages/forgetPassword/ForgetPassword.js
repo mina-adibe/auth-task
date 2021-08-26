@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import { ForgetPassRequest } from "../../store/actions/auth";
+import { TextInput } from "../../component/index";
 
 const ForgetPassword = ({ ForgetPassRequest }) => {
   //formik
@@ -27,7 +27,7 @@ const ForgetPassword = ({ ForgetPassRequest }) => {
     <div style={{ width: "50%", marginRight: "auto", marginLeft: "auto" }}>
       <h2>Forget Password</h2>
       <form onSubmit={formik.handleSubmit}>
-        <TextField
+        <TextInput
           fullWidth
           label="Email"
           id="email"
