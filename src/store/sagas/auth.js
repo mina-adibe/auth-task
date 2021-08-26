@@ -7,6 +7,8 @@ import * as resetPassword from "../../network/resetPassword";
 
 import * as types from "../actionTypes/auth";
 import * as Actions from "../actions/auth";
+//import * as ErrorsTypes from "../actionTypes/error";
+import * as ErrorAction from "../actions/error";
 import history from "../../utils/history";
 
 //register
@@ -14,9 +16,9 @@ export function* RegisterUsersReq(action) {
   try {
     const response = yield call(Register.Register, action.payload);
     history.push("./login");
-    yield put(Actions.RegisterReceive(response));
+    yield put(ErrorAction.ErrorReceived(response));
   } catch (error) {
-    yield put(Actions.RegisterReceive(error.response.data.errors));
+    yield put(ErrorAction.ErrorReceived(error.response.data.errors));
   }
 }
 //forget password
@@ -24,9 +26,9 @@ export function* ForgetPasswordReq(action) {
   try {
     const response = yield call(ForgetPass.forgetPassword, action.payload);
     history.replace(`./OtpForm/${action.payload.email}`);
-    yield put(Actions.ForgetPassReceive(response));
+    yield put(ErrorAction.ErrorReceived(response));
   } catch (error) {
-    yield put(Actions.ForgetPassReceive(error.response.data.errors));
+    yield put(ErrorAction.ErrorReceived(error.response.data.errors));
   }
 }
 //otp
@@ -36,9 +38,9 @@ export function* OtpReq(action) {
     history.replace(
       `./resetPassword/${action.payload.token}/${action.payload.email}`
     );
-    yield put(Actions.OtpReceive(response));
+    yield put(ErrorAction.ErrorReceived(response));
   } catch (error) {
-    yield put(Actions.OtpReceive(error.response.data.errors));
+    yield put(ErrorAction.ErrorReceived(error.response.data.errors));
   }
 }
 //reset password
@@ -46,9 +48,9 @@ export function* ResetPassword(action) {
   try {
     const response = yield call(resetPassword.resetPassword, action.payload);
     history.push("./login");
-    yield put(Actions.ResetPassReceive(response));
+    yield put(ErrorAction.ErrorReceived(response));
   } catch (error) {
-    yield put(Actions.ResetPassReceive(error.response.data.errors));
+    yield put(ErrorAction.ErrorReceived(error.response.data.errors));
   }
 }
 
