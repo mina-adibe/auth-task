@@ -10,7 +10,7 @@ import { useFormik } from "formik";
 import { ResetPassRequest } from "../../store/actions/auth";
 
 import Button from "@material-ui/core/Button";
-import { TextInput } from "../../component";
+import { Btn, TextInput } from "../../component";
 
 const ResetPassword = ({ ResetPassRequest }) => {
   let { pathname } = useLocation();
@@ -72,9 +72,9 @@ const ResetPassword = ({ ResetPassRequest }) => {
         />
         {formik.errors.token && <div>{formik.errors.token}</div>}
 
-        <Button variant="contained" color="primary" type="submit">
+        <Btn variant="contained" color="primary" type="submit">
           Login
-        </Button>
+        </Btn>
       </form>
     </div>
   );

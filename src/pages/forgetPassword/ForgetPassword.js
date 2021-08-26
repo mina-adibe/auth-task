@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import Button from "@material-ui/core/Button";
+
 import { ForgetPassRequest } from "../../store/actions/auth";
-import { TextInput } from "../../component/index";
+import { Btn, TextInput } from "../../component/index";
 
 const ForgetPassword = ({ ForgetPassRequest }) => {
   //formik
@@ -37,9 +37,10 @@ const ForgetPassword = ({ ForgetPassRequest }) => {
           onChange={formik.handleChange}
         />
         {formik.errors.email && <div>{formik.errors.email}</div>}
-        <Button variant="contained" color="primary" type="submit">
+
+        <Btn variant="contained" color="primary" type="submit">
           submit
-        </Button>
+        </Btn>
       </form>
     </div>
   );

@@ -8,8 +8,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import { OtpRequest } from "../../store/actions/auth";
-import Button from "@material-ui/core/Button";
-import { TextInput } from "../../component/index";
+import { Btn, TextInput } from "../../component/index";
 
 const OtpForm = ({ OtpRequest }) => {
   let { pathname } = useLocation();
@@ -59,9 +58,9 @@ const OtpForm = ({ OtpRequest }) => {
         />
         {formik.errors.token && <div>{formik.errors.token}</div>}
 
-        <Button variant="contained" color="primary" type="submit">
+        <Btn variant="contained" color="primary" type="submit">
           Submit
-        </Button>
+        </Btn>
       </form>
     </div>
   );

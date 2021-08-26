@@ -1,17 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
 import { RegisterRequest } from "../../store/actions/auth";
 import PhoneInput from "react-phone-input-2";
-import { TextInput } from "../../component/index";
+import { Btn, TextInput } from "../../component/index";
 
 import "react-phone-input-2/lib/style.css";
-
-import Button from "@material-ui/core/Button";
 
 const Register = ({ RegisterRequest }) => {
   //formik
@@ -104,9 +100,9 @@ const Register = ({ RegisterRequest }) => {
           <div>{formik.errors.confirmPassword}</div>
         )}
 
-        <Button variant="contained" color="primary" type="submit">
+        <Btn variant="contained" color="primary" type="submit">
           submit
-        </Button>
+        </Btn>
       </form>
     </div>
   );
