@@ -1,10 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import TextField from "@material-ui/core/TextField";
 import { ForgetPassRequest } from "../../store/actions/auth";
 
 const ForgetPassword = ({ ForgetPassRequest }) => {

@@ -1,10 +1,11 @@
-import "./App.css";
-import { Provider } from "react-redux";
-import configureStore from "./store/configureStore";
-import Routes from "./routes/Routes";
 import { Router } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import Routes from "./routes/Routes";
 import history from "../src/utils/history";
 import { Navbar } from "./component";
+import configureStore from "./store/configureStore";
+import "./App.css";
 
 function App() {
   return (

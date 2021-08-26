@@ -1,13 +1,16 @@
 import React from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
 import { RegisterRequest } from "../../store/actions/auth";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 const Register = ({ RegisterRequest }) => {
   //formik

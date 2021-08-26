@@ -1,12 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
+
 import * as Yup from "yup";
 import { useFormik } from "formik";
+
+import { ResetPassRequest } from "../../store/actions/auth";
+
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { ResetPassRequest } from "../../store/actions/auth";
-import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
 
 const ResetPassword = ({ ResetPassRequest }) => {
   let { pathname } = useLocation();
